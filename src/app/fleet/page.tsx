@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Fleet",
@@ -91,7 +92,7 @@ export default function FleetPage() {
         <div className="overflow-hidden rounded-xl border border-slate-200">
           <div className="relative aspect-[1600/738] w-full">
             <Image
-              src={cessna172.heroImage.src}
+              src={withBasePath(cessna172.heroImage.src)}
               alt={cessna172.heroImage.alt}
               fill
               priority
@@ -109,7 +110,7 @@ export default function FleetPage() {
                 <div key={image.src}>
                   <div className="relative aspect-[1600/739] w-full overflow-hidden rounded-lg">
                     <Image
-                      src={image.src}
+                      src={withBasePath(image.src)}
                       alt={image.alt}
                       fill
                       sizes="(min-width: 1024px) 560px, 50vw"
@@ -132,7 +133,7 @@ export default function FleetPage() {
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={plane.src}
+                  src={withBasePath(plane.src)}
                   alt={plane.alt}
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
