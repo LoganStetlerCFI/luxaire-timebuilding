@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TXT Aviation | Flight Training School",
+  title: {
+    default: "Luxaire Center | Flight Training School",
+    template: "%s | Luxaire Center",
+  },
   description:
-    "TXT Aviation is a professional flight training school dedicated to shaping safe, skilled, and confident pilots.",
+    "Luxaire Center is a professional flight training school in DeLand, FL dedicated to shaping safe, skilled, and confident pilots.",
 };
 
 export default function RootLayout({
@@ -28,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col bg-white">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

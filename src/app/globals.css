@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1f38;
 }
 
 @theme inline {
@@ -10,17 +10,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Luxaire Center brand palette: navy + sky */
+  --color-navy-950: #050b16;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f1f38;
+  --color-navy-700: #16304f;
+  --color-navy-600: #1d3a63;
+  --color-navy-500: #2a4d7c;
+
+  --color-luxaire-300: #bae6fd;
+  --color-luxaire-400: #7dd3fc;
+  --color-luxaire-500: #0ea5e9;
+  --color-luxaire-600: #0284c7;
+  --color-luxaire-700: #0369a1;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
