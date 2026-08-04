@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { withBasePath } from "@/lib/base-path";
 
@@ -14,22 +13,16 @@ const cessna172 = {
   heroImage: {
     src: "/fleet-images/172-N84582-exterior-main.jpg",
     alt: "Cessna 172 N84582 parked on the ramp",
-    width: 1600,
-    height: 738,
   },
   gallery: [
     {
       src: "/fleet-images/172-N84582-avionics.jpg",
       alt: "Dual glass cockpit avionics in Cessna 172 N84582",
-      width: 1600,
-      height: 739,
       caption: "Dual glass cockpit",
     },
     {
       src: "/fleet-images/172-N84582-interior-seats.jpg",
       alt: "Custom Luxaire-embroidered leather seats in Cessna 172 N84582",
-      width: 1600,
-      height: 738,
       caption: "Custom Luxaire interior",
     },
   ],
@@ -40,15 +33,11 @@ const cessna150s = [
     tailNumber: "N63424",
     src: "/fleet-images/150-N63424-ramp-sunny.jpg",
     alt: "Cessna 150 N63424 parked on the ramp under a blue sky",
-    width: 1920,
-    height: 1439,
   },
   {
     tailNumber: "N5785E",
     src: "/fleet-images/150-N5785E-nose-on.jpg",
     alt: "Nose-on view of Cessna 150 N5785E on the ramp",
-    width: 1920,
-    height: 1439,
   },
 ];
 
@@ -91,13 +80,11 @@ export default function FleetPage() {
         {/* Cessna 172 — flagship */}
         <div className="overflow-hidden rounded-xl border border-slate-200">
           <div className="relative aspect-[1600/738] w-full">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={withBasePath(cessna172.heroImage.src)}
               alt={cessna172.heroImage.alt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 1152px, 100vw"
-              className="object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div className="p-6 sm:p-8">
@@ -109,12 +96,12 @@ export default function FleetPage() {
               {cessna172.gallery.map((image) => (
                 <div key={image.src}>
                   <div className="relative aspect-[1600/739] w-full overflow-hidden rounded-lg">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={withBasePath(image.src)}
                       alt={image.alt}
-                      fill
-                      sizes="(min-width: 1024px) 560px, 50vw"
-                      className="object-cover"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
                   <p className="mt-2 text-sm text-slate-600">{image.caption}</p>
@@ -132,12 +119,12 @@ export default function FleetPage() {
               className="overflow-hidden rounded-lg border border-slate-200"
             >
               <div className="relative aspect-[4/3] w-full">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={withBasePath(plane.src)}
                   alt={plane.alt}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
               <div className="p-5">
