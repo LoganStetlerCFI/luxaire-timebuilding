@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { ChevronRightIcon, UsersIcon } from "@/components/icons";
+import { UsersIcon } from "@/components/icons";
+import ScheduleDiscoveryFlightButton from "@/components/ScheduleDiscoveryFlightButton";
 
 export const metadata: Metadata = {
   title: "About",
@@ -106,13 +106,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-8">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600"
-          >
-            Schedule a Discovery Flight
-            <ChevronRightIcon className="h-4 w-4" />
-          </Link>
+          <ScheduleDiscoveryFlightButton className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600" />
         </div>
       </section>
 

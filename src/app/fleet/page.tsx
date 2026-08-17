@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Fleet",
@@ -82,7 +81,7 @@ export default function FleetPage() {
           <div className="relative aspect-[1600/738] w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={withBasePath(cessna172.heroImage.src)}
+              src={cessna172.heroImage.src}
               alt={cessna172.heroImage.alt}
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -98,7 +97,7 @@ export default function FleetPage() {
                   <div className="relative aspect-[1600/739] w-full overflow-hidden rounded-lg">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={withBasePath(image.src)}
+                      src={image.src}
                       alt={image.alt}
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover"
@@ -121,7 +120,7 @@ export default function FleetPage() {
               <div className="relative aspect-[4/3] w-full">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={withBasePath(plane.src)}
+                  src={plane.src}
                   alt={plane.alt}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover"

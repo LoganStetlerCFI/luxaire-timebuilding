@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Plane } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { siteConfig } from "@/lib/site-config";
-import {
-  ChevronRightIcon,
-  ClockIcon,
-  KeyIcon,
-  PlaneIcon,
-} from "@/components/icons";
+import { ChevronRightIcon, ClockIcon, KeyIcon } from "@/components/icons";
+import TimeBuildingInquiryButton from "@/components/TimeBuildingInquiryButton";
 
 export const metadata: Metadata = {
   title: "Time Building",
@@ -49,9 +46,8 @@ export default function TimeBuildingPage() {
         <p className="mt-6 text-lg leading-8 text-slate-600">
           Once you complete an aircraft checkout with one of our instructors,
           you&apos;re free to rent our fleet and fly as much as you&apos;d
-          like. It&apos;s an affordable way for our students to build hours
-          at any point during their training — and it&apos;s open to renters
-          beyond our student body as well.
+          like — a simple, affordable way to build hours on your own
+          schedule.
         </p>
       </section>
 
@@ -92,7 +88,7 @@ export default function TimeBuildingPage() {
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start">
           <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-md bg-navy-900">
-            <PlaneIcon className="h-7 w-7 text-luxaire-400" />
+            <Plane className="h-7 w-7 text-luxaire-400" strokeWidth={1.75} />
           </div>
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-navy-900">
@@ -137,13 +133,7 @@ export default function TimeBuildingPage() {
             Reach out to schedule your checkout and start flying on your own
             schedule.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600"
-          >
-            Inquire About Time Building
-            <ChevronRightIcon className="h-4 w-4" />
-          </Link>
+          <TimeBuildingInquiryButton className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600" />
           <p className="text-sm text-slate-400">
             Or call us at{" "}
             <a

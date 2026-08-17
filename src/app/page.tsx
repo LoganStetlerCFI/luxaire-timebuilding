@@ -10,6 +10,7 @@ import {
   UsersIcon,
   WrenchIcon,
 } from "@/components/icons";
+import ScheduleDiscoveryFlightButton from "@/components/ScheduleDiscoveryFlightButton";
 
 const paths = [
   {
@@ -113,13 +114,7 @@ export default function Home() {
             {siteConfig.tagline}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600"
-            >
-              Schedule a Discovery Flight
-              <ChevronRightIcon className="h-4 w-4" />
-            </Link>
+            <ScheduleDiscoveryFlightButton className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600" />
             <Link
               href="/about"
               className="inline-flex items-center gap-2 rounded-md border border-slate-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white"
@@ -187,7 +182,7 @@ export default function Home() {
             What We Offer
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
-            Training We Offer
+            Training
           </h2>
         </div>
 
@@ -260,13 +255,7 @@ export default function Home() {
             Take the first step toward your pilot certificate. Schedule a
             discovery flight with one of our instructors today.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600"
-          >
-            Schedule a Discovery Flight
-            <ChevronRightIcon className="h-4 w-4" />
-          </Link>
+          <ScheduleDiscoveryFlightButton className="inline-flex items-center gap-2 rounded-md bg-luxaire-700 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-luxaire-600" />
           <p className="text-sm text-slate-400">
             Or call us at{" "}
             <a href={siteConfig.phoneHref} className="text-luxaire-400 hover:text-luxaire-300">
