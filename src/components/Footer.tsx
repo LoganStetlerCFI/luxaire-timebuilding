@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/lib/site-config";
-import { MapPinIcon, PhoneIcon } from "@/components/icons";
+import { MailIcon, MapPinIcon, PhoneIcon } from "@/components/icons";
 import Wordmark from "@/components/Wordmark";
 
 export default function Footer() {
@@ -51,6 +51,12 @@ export default function Footer() {
               <PhoneIcon className="h-4 w-4 shrink-0 text-luxaire-600" />
               <a href={siteConfig.phoneHref} className="hover:text-luxaire-700">
                 {siteConfig.phone}
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <MailIcon className="h-4 w-4 shrink-0 text-luxaire-600" />
+              <a href={siteConfig.emailHref} className="hover:text-luxaire-700">
+                {siteConfig.email}
               </a>
             </li>
           </ul>

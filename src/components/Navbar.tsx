@@ -44,12 +44,18 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden flex-col items-end gap-0.5 lg:flex">
           <a
             href={siteConfig.phoneHref}
             className="text-sm font-medium text-slate-600 hover:text-navy-900"
           >
             {siteConfig.phone}
+          </a>
+          <a
+            href={siteConfig.emailHref}
+            className="text-xs font-medium text-slate-500 hover:text-navy-900"
+          >
+            {siteConfig.email}
           </a>
         </div>
 
@@ -88,12 +94,18 @@ export default function Navbar() {
                 </li>
               );
             })}
-            <li className="mt-2 border-t border-slate-200 pt-3">
+            <li className="mt-2 flex flex-col gap-1 border-t border-slate-200 pt-3">
               <a
                 href={siteConfig.phoneHref}
                 className="block px-3 py-1 text-sm font-medium text-slate-600"
               >
                 {siteConfig.phone}
+              </a>
+              <a
+                href={siteConfig.emailHref}
+                className="block px-3 py-1 text-sm font-medium text-slate-600"
+              >
+                {siteConfig.email}
               </a>
             </li>
           </ul>

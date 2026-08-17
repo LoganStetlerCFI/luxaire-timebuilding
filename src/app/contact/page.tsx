@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import ScheduleDiscoveryFlightButton from "@/components/ScheduleDiscoveryFlightButton";
 import TimeBuildingInquiryButton from "@/components/TimeBuildingInquiryButton";
 import { siteConfig } from "@/lib/site-config";
-import { MapPinIcon, PhoneIcon } from "@/components/icons";
+import { MailIcon, MapPinIcon, PhoneIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -37,6 +37,12 @@ export default function ContactPage() {
             <PhoneIcon className="h-5 w-5 shrink-0 text-luxaire-600" />
             <a href={siteConfig.phoneHref} className="hover:text-luxaire-700">
               {siteConfig.phone}
+            </a>
+          </li>
+          <li className="flex items-center gap-2">
+            <MailIcon className="h-5 w-5 shrink-0 text-luxaire-600" />
+            <a href={siteConfig.emailHref} className="hover:text-luxaire-700">
+              {siteConfig.email}
             </a>
           </li>
         </ul>

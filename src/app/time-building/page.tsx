@@ -141,6 +141,13 @@ export default function TimeBuildingPage() {
               className="text-luxaire-400 hover:text-luxaire-300"
             >
               {siteConfig.phone}
+            </a>{" "}
+            or email{" "}
+            <a
+              href={siteConfig.emailHref}
+              className="text-luxaire-400 hover:text-luxaire-300"
+            >
+              {siteConfig.email}
             </a>
           </p>
         </div>
