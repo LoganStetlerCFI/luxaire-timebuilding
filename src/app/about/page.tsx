@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import { UsersIcon } from "@/components/icons";
 import ScheduleDiscoveryFlightButton from "@/components/ScheduleDiscoveryFlightButton";
 
 export const metadata: Metadata = {
@@ -33,28 +32,12 @@ const team = [
     role: "Owner, Flight Instructor",
     credentials: "Commercial Pilot ASEL, AMEL, CFI, CFII, ATP",
     bio: "A lifelong aviation practitioner, Monte has been a flight instructor since 1968. His flying experience spans everything from the Aeronca Champion 7AC to the Douglas DC-8-73, and he holds a degree in aviation engineering from Western Michigan University. Monte loves flying and sharing his passion for aviation with the next generation of pilots.",
-    placeholder: false,
   },
   {
     name: "Logan Stetler",
     role: "Chief Flight Instructor",
     credentials: "Commercial Pilot ASEL, AMEL, CFI, CFII, MEI, AGI",
     bio: "Logan is a passionate flight instructor dedicated to personalized instruction — no matter your experience level, he'll work with you to meet your specific goals. Safety- and proficiency-focused, Logan makes sure you have every skill you need to pass your checkride on the first try.",
-    placeholder: false,
-  },
-  {
-    name: "Instructor Name",
-    role: "Flight Instructor",
-    credentials: "",
-    bio: "Bio coming soon.",
-    placeholder: true,
-  },
-  {
-    name: "Instructor Name",
-    role: "Flight Instructor",
-    credentials: "",
-    bio: "Bio coming soon.",
-    placeholder: true,
   },
 ];
 
@@ -142,42 +125,28 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          {team.map((member, i) => (
+          {team.map((member) => (
             <div
-              key={`${member.name}-${i}`}
-              className={`flex gap-5 rounded-lg border border-slate-200 p-6 ${
-                member.placeholder ? "border-dashed" : ""
-              }`}
+              key={member.name}
+              className="flex gap-5 rounded-lg border border-slate-200 p-6"
             >
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-900">
-                {member.placeholder ? (
-                  <UsersIcon className="h-6 w-6 text-slate-400" />
-                ) : (
-                  <span className="text-base font-semibold text-luxaire-400">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                )}
+                <span className="text-base font-semibold text-luxaire-400">
+                  {member.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </span>
               </div>
               <div>
-                <h3
-                  className={`text-lg font-semibold ${
-                    member.placeholder ? "text-slate-400" : "text-navy-900"
-                  }`}
-                >
+                <h3 className="text-lg font-semibold text-navy-900">
                   {member.name}
                 </h3>
                 <p className="text-sm font-medium text-luxaire-700">
                   {member.role}
                   {member.credentials ? ` · ${member.credentials}` : ""}
                 </p>
-                <p
-                  className={`mt-2 text-sm leading-6 ${
-                    member.placeholder ? "text-slate-400 italic" : "text-slate-600"
-                  }`}
-                >
+                <p className="mt-2 text-sm leading-6 text-slate-600">
                   {member.bio}
                 </p>
               </div>
