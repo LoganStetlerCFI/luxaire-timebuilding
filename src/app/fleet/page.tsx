@@ -35,7 +35,7 @@ const cessna150s = [
   },
   {
     tailNumber: "N5785E",
-    src: "/fleet-images/150-N5785E-nose-on.jpg",
+    src: "/fleet-images/150-N5785E-new.jpg",
     alt: "Nose-on view of Cessna 150 N5785E on the ramp",
   },
 ];
